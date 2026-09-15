@@ -59,6 +59,11 @@ class UniquePtr {
         return m_ptr != nullptr;
     }
 
+    template <typename U>
+    UniquePtr(UniquePtr<U>&& other) {
+        (*this) = other; // just calling the move constructor
+    }
+
 
 
 
